@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste de Class Binding</title>
+</head>
+
+<body>
+
+<div id="root">
+    <button :title="titulo">Passe o mouse sobre o botão</button>
+</div>
+
+<script src="http://unpkg.com/vue"></script>
+<script>
+    var app = new Vue({
+        el: "#root",
+        data: {
+            titulo: "Título modificado pelo Vue-js"
+        }
+    });
+</script>
+
+</body>
+</html>
