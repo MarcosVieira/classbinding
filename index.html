@@ -11,8 +11,14 @@
         .azul {
             color: blue;
         }
-        .is-loading {
-            background: red;
+        .is-loading1 {
+            background: orange;
+        }
+        .is-loading2 {
+            background: orchid;
+        }
+        .back-green {
+            background: green;
         }
     </style>
 </head>
@@ -22,27 +28,55 @@
         <button @click="modificaTituloBotao()">Modificar o título do botão</button>
 
         <h1 :class="className">Olá Class Binding !!!</h1>
-        <h1 :class="{'is-loading': isLoading}" @click="toggleClass()">Olá Class Binding !!! {'is-loading':true}</h1>
+        <h1 :class="{'is-loading1': isLoading1, 'azul': isBlue1}" @click="toggleClass1()">Olá Class Binding !!!</h1>
+        <h1 :class="classObject" @mouseover="toggleClass2()">Olá Class Binding com classObject !!!</h1>
+        <h1 :class="[className, classBackgroundGreen]">Olá Class Binding com array !!!</h1>
+        <h1 :style="{color: 'blue', fontSize: 40 + 'px'}">Olá Style Binding !!!</h1>
+        <h1 :style="styleObject">Olá Style Object Binding !!!</h1>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
     <script>
-    var app = new Vue({
-        el: "#root",
-        data: {
-            titulo: "Título original atribuído pelo Vue-js",
-            className: "azul",
-            isLoading: true
-        },
-        methods: {
-            toggleClass: function() {
-                this.isLoading = !this.isLoading;
+        var app = new Vue({
+            el: "#root",
+            data: {
+                titulo: "Título original atribuído pelo Vue-js",
+                className: "azul",
+                classBackgroundGreen: "back-green",
+                isLoading1: true,
+                isBlue1: false,
+                isLoading2: true,
+                isBlue2: false,
+                styleObject: {
+                    color: 'green',
+                    fontSize: '14px'
+                }
             },
-            modificaTituloBotao: function() {
-                this.titulo = "Novo titulo do botão [" + (new Date()).getTime() + "]";
+
+            computed: {
+                classObject: function() {
+                    return {
+                        'is-loading2': this.isLoading2,
+                        'azul': this.isBlue2
+                    }
+                }
+
+            },
+
+            methods: {
+                toggleClass1: function() {
+                    this.isLoading1 = !this.isLoading1;
+                    this.isBlue1 = !this.isBlue1;
+                },
+                toggleClass2: function() {
+                    this.isLoading2 = !this.isLoading2;
+                    this.isBlue2 = !this.isBlue2;
+                },
+                modificaTituloBotao: function () {
+                    this.titulo = "Novo titulo do botão [" + (new Date()).getTime() + "]";
+                }
             }
-        }
-    });
+        });
     </script>
 </body>
 </html>

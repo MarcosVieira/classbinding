@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste de v-html, v-once, v-text</title>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+    <div id="root">
+
+        {{ mensagem }}
+
+    </div>
+
+    <script src="http://unpkg.com/vue"></script>
+    <script>
+        var app = new Vue({
+            el: "#root",
+            data: {
+                mensagem: "Olá !!!"
+            },
+
+            computed: {
+            },
+
+            methods: {
+            }
+        });
+    </script>
+</body>
+</html>
