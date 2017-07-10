@@ -3,23 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Teste de Class Binding</title>
+
+    <style type="text/css">
+        .vermelho {
+            color: red;
+        }
+        .azul {
+            color: blue;
+        }
+        .is-loading {
+            background: red;
+        }
+    </style>
 </head>
-
 <body>
+    <div id="root">
+        <button :title="titulo">Passe o mouse sobre este botão</button>
+        <button @click="modificaTituloBotao()">Modificar o título do botão</button>
 
-<div id="root">
-    <button :title="titulo">Passe o mouse sobre o botão</button>
-</div>
+        <h1 :class="className">Olá Class Binding !!!</h1>
+        <h1 :class="{'is-loading': isLoading}" @click="toggleClass()">Olá Class Binding !!! {'is-loading':true}</h1>
+    </div>
 
-<script src="http://unpkg.com/vue"></script>
-<script>
+    <script src="http://unpkg.com/vue"></script>
+    <script>
     var app = new Vue({
         el: "#root",
         data: {
-            titulo: "Título modificado pelo Vue-js"
+            titulo: "Título original atribuído pelo Vue-js",
+            className: "azul",
+            isLoading: true
+        },
+        methods: {
+            toggleClass: function() {
+                this.isLoading = !this.isLoading;
+            },
+            modificaTituloBotao: function() {
+                this.titulo = "Novo titulo do botão [" + (new Date()).getTime() + "]";
+            }
         }
     });
-</script>
-
+    </script>
 </body>
 </html>
