@@ -3,28 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Teste de v-html, v-once, v-text</title>
-    <style type="text/css">
-    </style>
+    <style type="text/css"></style>
 </head>
 <body>
     <div id="root">
-
         {{ mensagem }}
+        <button @click="mudaMensagem()">Muda mensagem</button>
 
+        <div v-once>{{ mensagem }}</div>
+        <div v-html="conteudoEmHtml"></div>
+        <div v-text="conteudoEmHtml"></div>
+        <div v-bind:id="dynamicId">Div dinâmico</div>
+
+        <button v-bind:disabled="seDesabilitado" @click="mudaCaptionButton1()">{{ captionButton1 }}</button>
+        <button @click="mudaCaptionButton2()">{{ captionButton2 }}</button>
     </div>
 
     <script src="http://unpkg.com/vue"></script>
+
     <script>
         var app = new Vue({
             el: "#root",
             data: {
-                mensagem: "Olá !!!"
+                mensagem: "Olááááá !!!",
+                conteudoEmHtml: "<b>Olha o<br/> negrito <i>gente</i></b>",
+                dynamicId: "divDinamico",
+                seDesabilitado: false,
+                captionButton1: "Button",
+                captionButton2: "Disable"
             },
 
             computed: {
             },
 
             methods: {
+                mudaMensagem: function() {
+                    this.mensagem = new Date().getTime();
+                },
+                mudaCaptionButton1: function() {
+                    this.captionButton1 = this.captionButton1.split(" ")[0] + " " + new Date().getTime();
+                },
+                mudaCaptionButton2: function() {
+                    this.seDesabilitado = !this.seDesabilitado;
+                    this.captionButton2 = this.seDesabilitado ? "Enable" : "Disable";
+                }
             }
         });
     </script>

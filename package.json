@@ -1,0 +1,32 @@
+}
+
+  {
+  "requires": true,
+  "lockfileVersion": 1,
+  "name": "classbinding",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "lodash": {
+      "version": "4.17.4",
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz",
+      "integrity": "sha1-eCA6TRwyiuHYbcpkYONptX9AVa4="
+    }
+  }
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcosVieira/classbinding.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcosVieira/classbinding/issues"
+  },
+  "homepage": "https://github.com/MarcosVieira/classbinding#readme",
+  "keywords": [],
+  "description": ""
+}
