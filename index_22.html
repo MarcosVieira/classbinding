@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Seção 3 Aula 22</title>
+    <title>Aula 22</title>
     <style type="text/css"></style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -10,12 +10,15 @@
 
 <body>
     <div id="root" class="container">
-        <mensagem>Mensagem teste padrão</mensagem>
-        <advertencia>Mensagem teste para advertência</advertencia>
-        <erro>Mensagem teste para avisar sobre erro ocorrido</erro>
+        <mensagem title="Olá mensagem normal !!!" body="Mensagem teste padrão"></mensagem>
+        <sucesso title="Olá mensagem de sucesso !!!" body="Mensagem teste para mensagem de sucesso"></sucesso>
+        <advertencia title="Olá mensagem de advertência !!!">Mensagem teste para advertência</advertencia>
+        <erro title="Olá mensagem de erro !!!" body="corpo da mensagem de erro por parâmetro">
+            <br/>Mensagem teste para avisar sobre erro ocorrido
+        </erro>
     </div>
 
     <script src="http://unpkg.com/vue@2.3.4"></script>
-    <script src="main.js"></script>
+    <script src="main_22.js"></script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 24</title>
+    <style type="text/css"></style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="root" class="container">
+        <button @click="showModal = true">Abrir a modal</button>
+        <modal v-show="showModal" @meuclickfechar="showModal = false">
+            <template slot="header">Título definido pelo slot</template>
+            Conteúdo da modal, texto maior, por Bulma
+        </modal>
+    </div>
+
+    <script src="http://unpkg.com/vue@2.3.4"></script>
+    <script src="main_24.js"></script>
+</body>
+</html>
