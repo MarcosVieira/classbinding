@@ -11,9 +11,17 @@
 <body>
     <div id="root" class="container">
         <button @click="showModal = true">Abrir a modal</button>
+
         <modal v-show="showModal" @meuclickfechar="showModal = false">
-            <template slot="header">Título definido pelo slot</template>
-            Conteúdo da modal, texto maior, por Bulma
+            <template slot="header">
+                Título definido pelo slot
+            </template>
+
+            Algo bem aqui :) texto maior
+
+            <template slot="footer">
+                <a class="button is-success">Salvar alterações</a>
+            </template>
         </modal>
     </div>
 

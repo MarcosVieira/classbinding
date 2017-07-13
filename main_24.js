@@ -14,11 +14,11 @@ Vue.component('modal', {
             </header>
             
             <section class="modal-card-body">
-              <!-- Content ... -->
+                <slot>Texto padrão apresentado se nada for definido</slot>
             </section>
             
             <footer class="modal-card-foot">
-              <a class="button is-success">Save changes</a>
+                <slot name="footer"></slot>
             </footer>
           </div>
         </div>`
